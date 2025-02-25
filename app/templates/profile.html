@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card text-center shadow-lg" style="width: 25rem; border-radius: 15px;">
+        <div class="card-header bg-success text-white" style="border-radius: 15px 15px 0 0;">
+            <img src="{{ url_for('static', filename='images/profile_pic.jpg') }}" alt="Profile Picture"  class="rounded-circle border border-white mt-3" style="width: 100px; height: 100px;" >
+            <h4 class="mt-2">{{ name }}</h4>
+            <p class="text-light">@{{ username }}</p>
+            <p class="text-light">{{ location }}</p>
+            <p class="text-light">Joined {{ joined_date }}</p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ bio }}</p>
+            <hr>
+            <div class="d-flex justify-content-around">
+                <div>
+                    <strong>{{ posts }}</strong><br>Posts
+                </div>
+                <div>
+                    <strong>{{ following }}</strong><br>Following
+                </div>
+                <div>
+                    <strong>{{ followers }}</strong><br>Followers
+                </div>
+            </div>
+            <button class="btn btn-success btn-lg mt-3 rounded-pill px-4">Follow</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
